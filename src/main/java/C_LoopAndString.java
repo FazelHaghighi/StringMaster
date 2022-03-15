@@ -11,6 +11,7 @@ public class C_LoopAndString {
      * the given character
      */
     public static boolean containsDoubleChar(String s, char ch) {
+
         for(int i = 0; i < s.length() - 1; i++)
         {
             if(s.charAt(i) == s.charAt(i+1)) return true;
@@ -69,7 +70,6 @@ public class C_LoopAndString {
         }
         return answer;
     }
-
 
     /**
      * <p>Implement Caesar cipher decryption algorithm (tag: cryptography)</p>
