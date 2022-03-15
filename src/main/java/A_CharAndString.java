@@ -16,6 +16,6 @@ public class A_CharAndString {
      * @return the ascii code of the given character
      */
     public static int asciiCode(char ch) {
-        return (int) ch;
+        return ch;
     }
 }

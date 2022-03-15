@@ -31,7 +31,7 @@ public class B_StringMethods {
             if(text.charAt(i) == ch) count++;
         }
         if(count == cnt) return true;
-        else return false;
+        return false;
     }
 
     /**
