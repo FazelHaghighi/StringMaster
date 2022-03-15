@@ -11,6 +11,10 @@ public class C_LoopAndString {
      * the given character
      */
     public static boolean containsDoubleChar(String s, char ch) {
+        for(int i = 0; i < s.length() - 1; i++)
+        {
+            if(s.charAt(i) == s.charAt(i+1)) return true;
+        }
         return false;
     }
 
@@ -24,7 +28,46 @@ public class C_LoopAndString {
      * @param offset shift amount
      */
     public static String caesarEncrypt(String s, int offset) {
-        return null;
+
+        while(offset < 0)
+        {
+            offset += 26;
+        }
+        while(offset > 26)
+        {
+            offset -= 26;
+        }
+        char string[] = s.toCharArray();
+        String answer = "";
+        for(int i = 0; i < s.length(); i++)
+        {
+            int word  = 0;
+            if((int)string[i] >= 65 && (int)string[i] <= 90)
+            {
+                if((int)string[i] + offset <= 90)
+                {
+                   word = (int)string[i] + offset;
+                }
+                else if((int)string[i] + offset > 90)
+                {
+                    word = (int)string[i] + offset - 26;
+                }
+            }
+            else if((int)string[i] >= 97 && (int)string[i] <= 122)
+            {
+                if((int)string[i] + offset <= 122)
+                {
+                    word = (int)string[i] + offset;
+                }
+                else if((int)string[i] + offset > 122)
+                {
+                    word = (int)string[i] + offset - 26;
+                }
+            }
+            else word = string[i];
+            answer += (char) word;
+        }
+        return answer;
     }
 
     /**
@@ -37,7 +80,7 @@ public class C_LoopAndString {
      * @param c shift amount
      */
     public static String caesarDecrypt(String s, int c) {
-        return null;
+        return caesarEncrypt(s, -c);
     }
 
     /*

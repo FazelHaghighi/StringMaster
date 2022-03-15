@@ -9,7 +9,9 @@ public class B_StringMethods {
      * @return the full name
      */
     public static String fullName(String firstName, String lastName) {
-        return null;
+        if(firstName == "") return lastName;
+        else if(lastName == "") return firstName;
+        else return firstName + " " + lastName;
     }
 
     /**
@@ -23,7 +25,13 @@ public class B_StringMethods {
      * the given number
      */
     public static boolean certainNumberOfChar(String text, char ch, int cnt) {
-        return false;
+        int count = 0;
+        for(int i = 0; i < text.length(); i++)
+        {
+            if(text.charAt(i) == ch) count++;
+        }
+        if(count == cnt) return true;
+        else return false;
     }
 
     /**
@@ -35,6 +43,11 @@ public class B_StringMethods {
      * @return the smaller word
      */
     public static String firstWord(String wordA, String wordB) {
-        return null;
+
+        if(wordA.compareTo(wordB) > 0)
+        {
+            return wordB;
+        }
+        else return wordA;
     }
 }
